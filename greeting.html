@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Greeting Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      text-align: center;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    #greeting {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Welcome!</h1>
+    <p>Enter your name:</p>
+    <input type="text" id="username" placeholder="Your name">
+    <br>
+    <button onclick="showGreeting()">Submit</button>
+    <p id="greeting"></p>
+  </div>
+
+  <script>
+    function showGreeting() {
+      const name = document.getElementById("username").value;
+      const greeting = document.getElementById("greeting");
+      if (name.trim() !== "") {
+        greeting.textContent = "Hi " + name + "!";
+      } else {
+        greeting.textContent = "Please enter your name.";
+      }
+    }
+  </script>
+</body>
+</html>
